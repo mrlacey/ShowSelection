@@ -7,6 +7,10 @@
 These are the changes to each version that has been released
 on the official Visual Studio extension gallery.
 
+## 1.1
+
+- [x] Support multiple-line selection
+
 ## 1.0
 
 - [x] Initial release

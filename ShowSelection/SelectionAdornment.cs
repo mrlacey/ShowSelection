@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Text;
 using System.Windows.Controls;
 using Microsoft.VisualStudio.Text.Editor;
 
@@ -23,9 +24,16 @@ namespace ShowSelection
             _view.ViewportWidthChanged += delegate { OnSizeChange(); };
 
             _view.Selection.SelectionChanged += delegate(object sender, EventArgs args)
+            {
+                var content = new StringBuilder();
+
+                foreach (var selectedSpan in view.Selection.SelectedSpans)
                 {
-                    _root.DisplayedSelection.Content = $"{_view.Selection.Start.Position.Position}:{_view.Selection.End.Position.Position}";
-                };
+                    content.AppendLine($"{selectedSpan.Start.Position}:{selectedSpan.End.Position}");
+                }
+
+                _root.DisplayedSelection.Content = content.ToString().TrimEnd();
+            };
         }
 
         public void OnSizeChange()
