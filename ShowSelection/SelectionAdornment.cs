@@ -41,12 +41,18 @@ namespace ShowSelection
             //clear the adornment layer of previous adornments
             _adornmentLayer.RemoveAdornment(_root);
 
-            //Place the image in the top right hand corner of the Viewport
-            Canvas.SetLeft(_root, _view.ViewportRight - 60);
-            Canvas.SetTop(_root, _view.ViewportTop + 10);
+            var margin = 5;
 
-            //add the image to the adornment layer and make it relative to the viewports
-            _adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, _root, null);
+            //Place the image in the top right hand corner of the Viewport
+            Canvas.SetLeft(_root, _view.ViewportRight - _root.ActualWidth - margin);
+            Canvas.SetTop(_root, _view.ViewportTop + margin);
+
+            // Don't show anythign if empty
+            if (!string.IsNullOrWhiteSpace(_root.Content.ToString()))
+            {
+                //add the image to the adornment layer and make it relative to the viewports
+                _adornmentLayer.AddAdornment(AdornmentPositioningBehavior.ViewportRelative, null, null, _root, null);
+            }
         }
     }
 }
