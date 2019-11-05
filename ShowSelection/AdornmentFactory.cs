@@ -1,8 +1,6 @@
 ﻿using System.ComponentModel.Composition;
 using Microsoft.VisualStudio.Text.Editor;
 using Microsoft.VisualStudio.Utilities;
-using Microsoft.VisualStudio.Text.Tagging;
-using Microsoft.VisualStudio.Editor;
 
 namespace ShowSelection
 {
