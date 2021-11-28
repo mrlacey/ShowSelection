@@ -7,6 +7,11 @@
 These are the changes to each version that has been released
 on the official Visual Studio extension gallery.
 
+## 1.5
+
+- [x] Update to target VS2019 explicitly
+- [x] Resigned with updated certificate
+
 ## 1.4
 
 - [x] Add icon
